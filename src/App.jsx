@@ -1,9 +1,17 @@
-function App() {
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { LoginPage } from './pages/Login.pages';
+import { HomePage } from './pages/Home/Home.pages';
 
+
+
+function App() {
   return (
-    <>
-    <p>App is render</p>
-    </>
+    <Router>
+      <Routes>
+        <Route path='/' element={<LoginPage/>}/>
+        <Route path='/home' element={<HomePage/>}/>
+      </Routes>
+    </Router>
   )
 }
 
