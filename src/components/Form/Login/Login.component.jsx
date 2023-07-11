@@ -1,12 +1,11 @@
 export const FormLoginComponent = () => {
 
-    return (
-        
+    return (     
         <form>
             <legend>Login</legend>
             <div className="input-group">
                 <label htmlFor="email">Email</label>
-                <input type="text" id='email' placeholder="Digite se email" />
+                <input type="text" id='email' placeholder="Digite seu email" />
             </div>
             <div className="input-group">
                 <label htmlFor="password">Senha</label>
