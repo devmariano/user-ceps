@@ -1,8 +1,9 @@
+import {FormLoginComponent} from '../components/Form/Login/Login.component';
 export const LoginPage = () => {
 
     return(
         <>
-        <p>Login page is render</p>
+        <FormLoginComponent/>
         </>
     )
 }
