@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import { MdVisibility, MdVisibilityOff} from 'react-icons/md'
 
-export const InputComponent = ({label,type,id,placeholder}) => {
+export const InputComponent = ({label,type,id,placeholder, register}) => {
     const [showPassword, setshowPassword] = useState(false);
 
     const  handleShowPassword = () => {
@@ -16,7 +16,7 @@ export const InputComponent = ({label,type,id,placeholder}) => {
 
         {type !== 'textarea' &&
         <Styled.InputContainer>
-        <Styled.Input type={ showPassword ? 'text' : type } id={id}  placeholder={placeholder} className='Input' />
+        <Styled.Input type={ showPassword ? 'text' : type } id={id}  placeholder={placeholder}  {...register}/>
         {type == 'password' && 
         <Styled.Icon type='button' onClick={handleShowPassword}>
             {!showPassword 
@@ -29,7 +29,7 @@ export const InputComponent = ({label,type,id,placeholder}) => {
         }
 
         { type === 'textarea' &&
-        <Styled.TextArea id={id}  placeholder={placeholder} className='TextArea'/>
+        <Styled.TextArea id={id}  placeholder={placeholder}  {...register}/>
         }
         </Styled.InputGroup>
     )
@@ -40,4 +40,5 @@ label: PropTypes.string,
 type: PropTypes.string,
 id: PropTypes.string.isRequired,
 placeholder: PropTypes.string,
+register: PropTypes.any,
 }
